@@ -11,21 +11,21 @@ const projects = [
   {
     title: "Smart Port Scheduling App",
     description:
-      "A hackathon project idea that helps drivers book port entry times, reduce congestion and collect green credits for rewards.",
+      "Ý tưởng hackathon giúp tài xế đặt lịch vào cảng, giảm ùn tắc và tích điểm xanh để đổi phần thưởng.",
     stack: ["React", "Backend", "MySQL", "AI"],
-    highlight: "Top 20 — DigiPort Logistics Hackathon 2025",
+    highlight: "Top 20 - DigiPort Logistics Hackathon 2025",
   },
   {
     title: "Movie Ticket Booking System",
     description:
-      "A software engineering project for booking movie tickets, managing users, seats, showtimes and cinema data.",
+      "Đồ án kỹ thuật phần mềm hỗ trợ đặt vé xem phim, quản lý người dùng, ghế, suất chiếu và dữ liệu rạp.",
     stack: ["Software Engineering", "Database", "UI/UX"],
   },
   {
-    title: "Personal Portfolio Website",
+    title: "Realtime Chess & Caro Game",
     description:
-      "A responsive personal website for introducing myself, highlighting projects, achievements and contact information.",
-    stack: ["React", "Vite", "Tailwind CSS"],
+      "Dự án game cờ vua và cờ caro chơi realtime, sử dụng socket để đồng bộ nước đi giữa nhiều người chơi.",
+    stack: ["Socket", "Realtime", "Game Logic"],
   },
 ];
 
@@ -34,7 +34,7 @@ const achievements = [
     title: "Top 20",
     event: "DigiPort Logistics Hackathon 2025",
     description:
-      "Recognized for a smart logistics idea focused on port scheduling, congestion reduction and green credit rewards.",
+      "Được ghi nhận với ý tưởng logistics thông minh tập trung vào đặt lịch vào cảng, giảm ùn tắc và tích điểm xanh.",
   },
 ];
 
@@ -65,13 +65,13 @@ export default function KhangPortfolio() {
 
           <div className="hidden items-center gap-7 text-sm text-neutral-400 sm:flex">
             <a className="transition hover:text-white" href="#about">
-              About
+              Giới thiệu
             </a>
             <a className="transition hover:text-white" href="#projects">
-              Projects
+              Dự án
             </a>
             <a className="transition hover:text-white" href="#contact">
-              Contact
+              Liên hệ
             </a>
           </div>
         </nav>
@@ -86,17 +86,17 @@ export default function KhangPortfolio() {
             transition={{ duration: 0.7 }}
           >
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
-              IT Student / Web Developer
+              Sinh viên CNTT / Web Developer
             </p>
 
             <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Hi, I'm Khang. I build simple and useful digital products.
+              Xin chào, mình là Khang. Mình xây dựng những sản phẩm số đơn giản và hữu ích.
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-neutral-400 sm:text-lg">
-              I am learning web development, software engineering, database
-              design and AI basics. I like clean interfaces, clear logic and
-              practical projects that solve real problems.
+              Mình đang học phát triển web, kỹ thuật phần mềm và thiết kế cơ sở
+              dữ liệu. Mình thích giao diện gọn gàng, logic rõ ràng và các dự
+              án thực tế có thể giải quyết vấn đề thật.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -104,7 +104,7 @@ export default function KhangPortfolio() {
                 href="#projects"
                 className="rounded-full bg-white px-5 py-3 text-sm font-medium text-neutral-950 transition hover:bg-neutral-200"
               >
-                View projects
+                Xem dự án
               </a>
 
               <a
@@ -127,7 +127,7 @@ export default function KhangPortfolio() {
             <div className="rounded-[1.5rem] border border-white/10 bg-neutral-900 p-6">
               <div className="mb-8 flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-neutral-500">Profile</p>
+                  <p className="text-sm text-neutral-500">Hồ sơ</p>
                   <h2 className="mt-1 text-2xl font-semibold">Khang</h2>
                 </div>
 
@@ -137,10 +137,10 @@ export default function KhangPortfolio() {
               </div>
 
               <div className="space-y-4 text-sm">
-                <InfoRow label="Focus" value="Web Development" />
-                <InfoRow label="Achievement" value="Top 20 Hackathon 2025" />
-                <InfoRow label="Learning" value="React, Python, MySQL" />
-                <InfoRow label="Style" value="Minimal, clean, practical" />
+                <InfoRow label="Định hướng" value="Web Development" />
+                <InfoRow label="Thành tích" value="Top 20 Hackathon 2025" />
+                <InfoRow label="Đang học" value="React, Python, MySQL" />
+                <InfoRow label="Phong cách" value="Gọn gàng, thực tế" />
                 <InfoRow label="GitHub" value="github.com/mm4you" />
               </div>
             </div>
@@ -155,24 +155,25 @@ export default function KhangPortfolio() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-              About me
+              Giới thiệu
             </p>
 
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              A student who enjoys turning ideas into real products.
+              Một sinh viên thích biến ý tưởng thành sản phẩm thật.
             </h2>
           </div>
 
           <div className="space-y-6 text-base leading-8 text-neutral-400">
             <p>
-              I focus on building websites and software projects that are easy
-              to use and easy to understand. My current learning path includes
-              frontend development, backend fundamentals and database design.
+              Mình tập trung xây dựng website và các dự án phần mềm dễ dùng,
+              dễ hiểu. Hướng học hiện tại của mình gồm frontend development,
+              backend fundamentals và database design.
             </p>
 
             <p>
-              I care about simple UI, clear structure and practical features. My
-              goal is to keep improving through real projects and teamwork.
+              Mình quan tâm đến UI đơn giản, cấu trúc rõ ràng và tính năng thực
+              tế. Mục tiêu của mình là tiếp tục cải thiện thông qua dự án thật
+              và làm việc nhóm.
             </p>
           </div>
         </div>
@@ -181,7 +182,7 @@ export default function KhangPortfolio() {
       <section className="px-5 py-20 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-6xl">
           <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-            Achievement
+            Thành tích
           </p>
 
           <div className="mt-6 grid gap-5 md:grid-cols-2">
@@ -206,7 +207,7 @@ export default function KhangPortfolio() {
       <section className="px-5 pb-20 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-6xl">
           <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-            Tech stack
+            Kỹ năng
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -227,17 +228,17 @@ export default function KhangPortfolio() {
           <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-                Projects
+                Dự án
               </p>
 
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Selected work
+                Một số sản phẩm nổi bật
               </h2>
             </div>
 
             <p className="max-w-md text-sm leading-6 text-neutral-500">
-              A few projects and ideas from my learning journey in IT, web
-              development and software engineering.
+              Một vài dự án và ý tưởng trong quá trình học CNTT, phát triển web
+              và kỹ thuật phần mềm.
             </p>
           </div>
 
@@ -298,15 +299,15 @@ export default function KhangPortfolio() {
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-8 md:flex-row md:items-center">
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-              Contact
+              Liên hệ
             </p>
 
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Let's connect.
+              Kết nối với mình.
             </h2>
 
             <p className="mt-3 max-w-md text-sm leading-6 text-neutral-500">
-              Follow my learning journey, projects and daily updates.
+              Theo dõi quá trình học tập, dự án và các cập nhật mới của mình.
             </p>
           </div>
 
