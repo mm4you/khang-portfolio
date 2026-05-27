@@ -22,10 +22,10 @@ const projects = [
     stack: ["Software Engineering", "Database", "UI/UX"],
   },
   {
-    title: "AI Search Algorithms",
+    title: "Personal Portfolio Website",
     description:
-      "Practice projects for BFS, DFS, Greedy Best First Search and A* pathfinding with clear algorithm logic.",
-    stack: ["Python", "Algorithms", "AI Basics"],
+      "A responsive personal website for introducing myself, highlighting projects, achievements and contact information.",
+    stack: ["React", "Vite", "Tailwind CSS"],
   },
 ];
 
@@ -167,8 +167,7 @@ export default function KhangPortfolio() {
             <p>
               I focus on building websites and software projects that are easy
               to use and easy to understand. My current learning path includes
-              frontend development, backend fundamentals, database design and AI
-              search algorithms.
+              frontend development, backend fundamentals and database design.
             </p>
 
             <p>
