@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -7,36 +8,130 @@ import {
   BrainCircuit,
 } from "lucide-react";
 
-const projects = [
-  {
-    title: "Smart Port Scheduling App",
-    description:
-      "Ý tưởng hackathon giúp tài xế đặt lịch vào cảng, giảm ùn tắc và tích điểm xanh để đổi phần thưởng.",
-    stack: ["React", "Backend", "MySQL", "AI"],
-    highlight: "Top 20 - DigiPort Logistics Hackathon 2025",
+const content = {
+  vi: {
+    nav: ["Giới thiệu", "Dự án", "Liên hệ"],
+    role: "Sinh viên CNTT / Web Developer",
+    heroTitle:
+      "Xin chào, mình là Khang. Mình xây dựng những sản phẩm số đơn giản và hữu ích.",
+    heroDescription:
+      "Mình đang học phát triển web, kỹ thuật phần mềm và thiết kế cơ sở dữ liệu. Mình thích giao diện gọn gàng, logic rõ ràng và các dự án thực tế có thể giải quyết vấn đề thật.",
+    viewProjects: "Xem dự án",
+    profile: "Hồ sơ",
+    infoRows: [
+      ["Định hướng", "Web Development"],
+      ["Thành tích", "Top 20 Hackathon 2025"],
+      ["Đang học", "React, Python, MySQL"],
+      ["Phong cách", "Gọn gàng, thực tế"],
+      ["GitHub", "github.com/mm4you"],
+    ],
+    aboutEyebrow: "Giới thiệu",
+    aboutTitle: "Một sinh viên thích biến ý tưởng thành sản phẩm thật.",
+    aboutParagraphs: [
+      "Mình tập trung xây dựng website và các dự án phần mềm dễ dùng, dễ hiểu. Hướng học hiện tại của mình gồm frontend development, backend fundamentals và database design.",
+      "Mình quan tâm đến UI đơn giản, cấu trúc rõ ràng và tính năng thực tế. Mục tiêu của mình là tiếp tục cải thiện thông qua dự án thật và làm việc nhóm.",
+    ],
+    achievementEyebrow: "Thành tích",
+    skillsEyebrow: "Kỹ năng",
+    projectsEyebrow: "Dự án",
+    projectsTitle: "Một số sản phẩm nổi bật",
+    projectsDescription:
+      "Một vài dự án và ý tưởng trong quá trình học CNTT, phát triển web và kỹ thuật phần mềm.",
+    contactEyebrow: "Liên hệ",
+    contactTitle: "Kết nối với mình.",
+    contactDescription:
+      "Theo dõi quá trình học tập, dự án và các cập nhật mới của mình.",
+    projects: [
+      {
+        title: "Smart Port Scheduling App",
+        description:
+          "Ý tưởng hackathon giúp tài xế đặt lịch vào cảng, giảm ùn tắc và tích điểm xanh để đổi phần thưởng.",
+        stack: ["React", "Backend", "MySQL", "AI"],
+        highlight: "Top 20 - DigiPort Logistics Hackathon 2025",
+      },
+      {
+        title: "Movie Ticket Booking System",
+        description:
+          "Đồ án kỹ thuật phần mềm hỗ trợ đặt vé xem phim, quản lý người dùng, ghế, suất chiếu và dữ liệu rạp.",
+        stack: ["Software Engineering", "Database", "UI/UX"],
+      },
+      {
+        title: "Realtime Chess & Caro Game",
+        description:
+          "Dự án game cờ vua và cờ caro chơi realtime, sử dụng socket để đồng bộ nước đi giữa nhiều người chơi.",
+        stack: ["Socket", "Realtime", "Game Logic"],
+      },
+    ],
+    achievements: [
+      {
+        title: "Top 20",
+        event: "DigiPort Logistics Hackathon 2025",
+        description:
+          "Được ghi nhận với ý tưởng logistics thông minh tập trung vào đặt lịch vào cảng, giảm ùn tắc và tích điểm xanh.",
+      },
+    ],
   },
-  {
-    title: "Movie Ticket Booking System",
-    description:
-      "Đồ án kỹ thuật phần mềm hỗ trợ đặt vé xem phim, quản lý người dùng, ghế, suất chiếu và dữ liệu rạp.",
-    stack: ["Software Engineering", "Database", "UI/UX"],
+  en: {
+    nav: ["About", "Projects", "Contact"],
+    role: "IT Student / Web Developer",
+    heroTitle: "Hi, I'm Khang. I build simple and useful digital products.",
+    heroDescription:
+      "I am learning web development, software engineering and database design. I like clean interfaces, clear logic and practical projects that solve real problems.",
+    viewProjects: "View projects",
+    profile: "Profile",
+    infoRows: [
+      ["Focus", "Web Development"],
+      ["Achievement", "Top 20 Hackathon 2025"],
+      ["Learning", "React, Python, MySQL"],
+      ["Style", "Clean, practical"],
+      ["GitHub", "github.com/mm4you"],
+    ],
+    aboutEyebrow: "About me",
+    aboutTitle: "A student who enjoys turning ideas into real products.",
+    aboutParagraphs: [
+      "I focus on building websites and software projects that are easy to use and easy to understand. My current learning path includes frontend development, backend fundamentals and database design.",
+      "I care about simple UI, clear structure and practical features. My goal is to keep improving through real projects and teamwork.",
+    ],
+    achievementEyebrow: "Achievement",
+    skillsEyebrow: "Tech stack",
+    projectsEyebrow: "Projects",
+    projectsTitle: "Selected work",
+    projectsDescription:
+      "A few projects and ideas from my learning journey in IT, web development and software engineering.",
+    contactEyebrow: "Contact",
+    contactTitle: "Let's connect.",
+    contactDescription: "Follow my learning journey, projects and updates.",
+    projects: [
+      {
+        title: "Smart Port Scheduling App",
+        description:
+          "A hackathon idea that helps drivers book port entry times, reduce congestion and collect green credits for rewards.",
+        stack: ["React", "Backend", "MySQL", "AI"],
+        highlight: "Top 20 - DigiPort Logistics Hackathon 2025",
+      },
+      {
+        title: "Movie Ticket Booking System",
+        description:
+          "A software engineering project for booking movie tickets, managing users, seats, showtimes and cinema data.",
+        stack: ["Software Engineering", "Database", "UI/UX"],
+      },
+      {
+        title: "Realtime Chess & Caro Game",
+        description:
+          "A realtime chess and caro game project using sockets to synchronize moves between players.",
+        stack: ["Socket", "Realtime", "Game Logic"],
+      },
+    ],
+    achievements: [
+      {
+        title: "Top 20",
+        event: "DigiPort Logistics Hackathon 2025",
+        description:
+          "Recognized for a smart logistics idea focused on port scheduling, congestion reduction and green credit rewards.",
+      },
+    ],
   },
-  {
-    title: "Realtime Chess & Caro Game",
-    description:
-      "Dự án game cờ vua và cờ caro chơi realtime, sử dụng socket để đồng bộ nước đi giữa nhiều người chơi.",
-    stack: ["Socket", "Realtime", "Game Logic"],
-  },
-];
-
-const achievements = [
-  {
-    title: "Top 20",
-    event: "DigiPort Logistics Hackathon 2025",
-    description:
-      "Được ghi nhận với ý tưởng logistics thông minh tập trung vào đặt lịch vào cảng, giảm ùn tắc và tích điểm xanh.",
-  },
-];
+};
 
 const skills = [
   "C++",
@@ -52,27 +147,38 @@ const skills = [
 ];
 
 export default function KhangPortfolio() {
+  const [language, setLanguage] = useState("vi");
+  const t = content[language];
+
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100">
       <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 py-6 sm:px-8 lg:px-10">
         <nav className="flex items-center justify-between border-b border-white/10 pb-5">
-          <a
-            href="#home"
-            className="text-sm font-semibold tracking-wide text-white"
-          >
+          <a href="#home" className="text-sm font-semibold tracking-wide text-white">
             KHANG
           </a>
 
-          <div className="hidden items-center gap-7 text-sm text-neutral-400 sm:flex">
-            <a className="transition hover:text-white" href="#about">
-              Giới thiệu
-            </a>
-            <a className="transition hover:text-white" href="#projects">
-              Dự án
-            </a>
-            <a className="transition hover:text-white" href="#contact">
-              Liên hệ
-            </a>
+          <div className="flex items-center gap-4 text-sm text-neutral-400 sm:gap-7">
+            <div className="hidden items-center gap-7 sm:flex">
+              <a className="transition hover:text-white" href="#about">
+                {t.nav[0]}
+              </a>
+              <a className="transition hover:text-white" href="#projects">
+                {t.nav[1]}
+              </a>
+              <a className="transition hover:text-white" href="#contact">
+                {t.nav[2]}
+              </a>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setLanguage(language === "vi" ? "en" : "vi")}
+              className="rounded-full border border-white/10 px-3 py-1.5 text-xs font-semibold text-white transition hover:border-white/30 hover:bg-white/5"
+              aria-label="Switch language"
+            >
+              {language === "vi" ? "EN" : "VI"}
+            </button>
           </div>
         </nav>
 
@@ -86,17 +192,15 @@ export default function KhangPortfolio() {
             transition={{ duration: 0.7 }}
           >
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
-              Sinh viên CNTT / Web Developer
+              {t.role}
             </p>
 
             <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Xin chào, mình là Khang. Mình xây dựng những sản phẩm số đơn giản và hữu ích.
+              {t.heroTitle}
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-neutral-400 sm:text-lg">
-              Mình đang học phát triển web, kỹ thuật phần mềm và thiết kế cơ sở
-              dữ liệu. Mình thích giao diện gọn gàng, logic rõ ràng và các dự
-              án thực tế có thể giải quyết vấn đề thật.
+              {t.heroDescription}
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -104,7 +208,7 @@ export default function KhangPortfolio() {
                 href="#projects"
                 className="rounded-full bg-white px-5 py-3 text-sm font-medium text-neutral-950 transition hover:bg-neutral-200"
               >
-                Xem dự án
+                {t.viewProjects}
               </a>
 
               <a
@@ -127,7 +231,7 @@ export default function KhangPortfolio() {
             <div className="rounded-[1.5rem] border border-white/10 bg-neutral-900 p-6">
               <div className="mb-8 flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-neutral-500">Hồ sơ</p>
+                  <p className="text-sm text-neutral-500">{t.profile}</p>
                   <h2 className="mt-1 text-2xl font-semibold">Khang</h2>
                 </div>
 
@@ -137,11 +241,9 @@ export default function KhangPortfolio() {
               </div>
 
               <div className="space-y-4 text-sm">
-                <InfoRow label="Định hướng" value="Web Development" />
-                <InfoRow label="Thành tích" value="Top 20 Hackathon 2025" />
-                <InfoRow label="Đang học" value="React, Python, MySQL" />
-                <InfoRow label="Phong cách" value="Gọn gàng, thực tế" />
-                <InfoRow label="GitHub" value="github.com/mm4you" />
+                {t.infoRows.map(([label, value]) => (
+                  <InfoRow key={label} label={label} value={value} />
+                ))}
               </div>
             </div>
           </motion.div>
@@ -155,26 +257,18 @@ export default function KhangPortfolio() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-              Giới thiệu
+              {t.aboutEyebrow}
             </p>
 
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Một sinh viên thích biến ý tưởng thành sản phẩm thật.
+              {t.aboutTitle}
             </h2>
           </div>
 
           <div className="space-y-6 text-base leading-8 text-neutral-400">
-            <p>
-              Mình tập trung xây dựng website và các dự án phần mềm dễ dùng,
-              dễ hiểu. Hướng học hiện tại của mình gồm frontend development,
-              backend fundamentals và database design.
-            </p>
-
-            <p>
-              Mình quan tâm đến UI đơn giản, cấu trúc rõ ràng và tính năng thực
-              tế. Mục tiêu của mình là tiếp tục cải thiện thông qua dự án thật
-              và làm việc nhóm.
-            </p>
+            {t.aboutParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -182,11 +276,11 @@ export default function KhangPortfolio() {
       <section className="px-5 py-20 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-6xl">
           <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-            Thành tích
+            {t.achievementEyebrow}
           </p>
 
           <div className="mt-6 grid gap-5 md:grid-cols-2">
-            {achievements.map((item) => (
+            {t.achievements.map((item) => (
               <div
                 key={item.event}
                 className="rounded-[1.7rem] border border-white/10 bg-white/[0.03] p-6"
@@ -207,7 +301,7 @@ export default function KhangPortfolio() {
       <section className="px-5 pb-20 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-6xl">
           <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-            Kỹ năng
+            {t.skillsEyebrow}
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -228,22 +322,21 @@ export default function KhangPortfolio() {
           <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-                Dự án
+                {t.projectsEyebrow}
               </p>
 
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Một số sản phẩm nổi bật
+                {t.projectsTitle}
               </h2>
             </div>
 
             <p className="max-w-md text-sm leading-6 text-neutral-500">
-              Một vài dự án và ý tưởng trong quá trình học CNTT, phát triển web
-              và kỹ thuật phần mềm.
+              {t.projectsDescription}
             </p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-3">
-            {projects.map((project, index) => (
+            {t.projects.map((project, index) => (
               <motion.article
                 key={project.title}
                 initial={{ opacity: 0, y: 18 }}
@@ -299,15 +392,15 @@ export default function KhangPortfolio() {
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-8 md:flex-row md:items-center">
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
-              Liên hệ
+              {t.contactEyebrow}
             </p>
 
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
-              Kết nối với mình.
+              {t.contactTitle}
             </h2>
 
             <p className="mt-3 max-w-md text-sm leading-6 text-neutral-500">
-              Theo dõi quá trình học tập, dự án và các cập nhật mới của mình.
+              {t.contactDescription}
             </p>
           </div>
 

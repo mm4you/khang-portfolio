@@ -1,13 +1,24 @@
 # Khang Portfolio
 
-Personal portfolio website built with React, Vite and Tailwind CSS.
+Personal portfolio website for Khang.
+
+## Live Website
+
+https://mm4you.github.io/khang-portfolio/
+
+## Tech Stack
+
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
 
 ## Features
 
-- Responsive landing page
+- Responsive portfolio layout
+- Vietnamese and English language toggle
 - About, achievements, skills, projects and contact sections
-- Framer Motion animations
-- Clean dark visual style
+- GitHub Pages deployment
 
 ## Development
 
