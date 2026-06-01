@@ -147,7 +147,7 @@ const skills = [
 ];
 
 export default function KhangPortfolio() {
-  const [language, setLanguage] = useState("vi");
+  const [language, setLanguage] = useState("en");
   const t = content[language];
 
   return (
